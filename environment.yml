@@ -1,0 +1,11 @@
+name: seqkit_env
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python==3.11.9
+  - setuptools
+  - wheel
+  - pip
+

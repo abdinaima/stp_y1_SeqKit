@@ -1,0 +1,35 @@
+[project]
+name = "stp_y1_SeqKit"
+version = "0.0.1"
+description = "A small toolkit that manipulates DNA (and other) sequences"
+
+license = {file = "UNLICENSED"}
+authors = [{name = "Naima Abdi", email = "abdi.naima@outlook.com"}]
+readme = "README.md"
+keywords = [
+    "bioinformatics",
+    "DNA Sequence",
+]
+requires-python = ">=3.11,<3.12"
+
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: Education",
+    "Topic :: Software Development :: Build Tools",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3.11"
+]
+
+#Dynamically load dependencies
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools_scm]
+
+[tool.setuptools.packages.find]
+where = ["."]  # Look for packages in the 'root' directory
+include = ["SeqKit*"]
+
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2", "wheel"]
+build-backend = "setuptools.build_meta"
