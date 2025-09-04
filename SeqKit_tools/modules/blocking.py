@@ -6,8 +6,8 @@ The function then prints the sequence in blocks of the desired size, with gaps s
 
 def blocking (seq, blocksize):
 
-    i = 0
-    blocks = []
+    seq = seq.upper()
+
     allowed_bases = {"A", "T", "C", "G"}
 
     if not isinstance(seq, str):
@@ -19,6 +19,11 @@ def blocking (seq, blocksize):
 
     if not isinstance(blocksize, int) or blocksize <= 0:
         raise ValueError ("The blocksize must be a positive integer!")
+    
+    
+    
+    i = 0
+    blocks = []
 
     while i < len(seq):
         blocks.append(seq[i:i+blocksize])

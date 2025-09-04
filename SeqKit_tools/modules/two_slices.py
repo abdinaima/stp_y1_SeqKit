@@ -8,6 +8,8 @@ The function returns 2 slices of the DNA sequence, between the positions represe
 
 def two_slices (seq, n1, n2, n3, n4):
 
+    seq = seq.upper()
+
     allowed_bases = {"A", "T", "C", "G"}
     
     if not isinstance (seq, str):

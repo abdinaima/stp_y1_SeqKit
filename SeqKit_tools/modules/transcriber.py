@@ -6,6 +6,8 @@ It returns an RNA sequence 'rna', which can then be used later (e.g. in a later 
 
 def transcriber (dna):
 
+    dna = dna.upper()
+
     allowed_bases = {"A", "T", "C", "G"}
 
     if not isinstance(dna, str):
@@ -15,7 +17,7 @@ def transcriber (dna):
         if x not in allowed_bases:
             raise ValueError ("Invalid non-DNA bases appear in this sequence!")
 
-    return dna.translate(str.maketrans("tT", "uU"))
+    return dna.translate(str.maketrans("T", "U"))
 
 
 if __name__ == "__main__":
