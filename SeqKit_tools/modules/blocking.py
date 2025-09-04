@@ -8,10 +8,15 @@ def blocking (seq, blocksize):
 
     i = 0
     blocks = []
+    allowed_bases = {"A", "T", "C", "G"}
 
     if not isinstance(seq, str):
         raise TypeError ("Sequence must be a string!")
     
+    for x in seq:
+        if x not in allowed_bases:
+            raise ValueError ("Invalid non-DNA bases appear in this sequence!")
+
     if not isinstance(blocksize, int) or blocksize <= 0:
         raise ValueError ("The blocksize must be a positive integer!")
 
