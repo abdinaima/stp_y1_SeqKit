@@ -38,6 +38,3 @@ def create_logger():
 
 # Instantiate the logger
 logger = create_logger()
-
-
-logger.info("Chunking sequence '{}' into blocks of {}".format(query_sequence, chunk_by))
