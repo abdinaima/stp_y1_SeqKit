@@ -15,7 +15,7 @@ def square_hypotenuse (a, b):
         if not isinstance(a, int) or not isinstance(b, int):
             raise TypeError ("Both traingle sides must be integers!")
         
-        if a < 0 or b < 0:
+        if a <= 0 or b <= 0:
             raise ValueError ("Both integers must be positive!")
 
         return a**2 + b**2
