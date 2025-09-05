@@ -11,23 +11,23 @@ def blocking (seq, blocksize):
     logger.info(f"Blocking the sequence '{seq}' into blocks of {blocksize}.")
 
     try:
+        
+        if not isinstance(seq, str):
+            raise TypeError ("Sequence must be a string!")
+        
+        if not isinstance(blocksize, int) or blocksize <= 0:
+            raise ValueError ("The blocksize must be a positive integer!")
+        
         seq = seq.upper()
         logger.debug(f"Sequence converted to uppercase: '{seq}'")
 
         allowed_bases = {"A", "T", "C", "G"}
 
-        if not isinstance(seq, str):
-            raise TypeError ("Sequence must be a string!")
-        
         for x in seq:
             if x not in allowed_bases:
                 raise ValueError ("Invalid non-DNA bases appear in this sequence!")
 
-        if not isinstance(blocksize, int) or blocksize <= 0:
-            raise ValueError ("The blocksize must be a positive integer!")
         
-        
-
         i = 0
         blocks = []
 
