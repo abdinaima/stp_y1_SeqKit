@@ -11,17 +11,20 @@ def transcriber (dna):
     logger.info(f"Transcribing the DNA sequence '{dna}'")
 
     try:
+
+        if not isinstance(dna, str):
+            raise TypeError ("The sequence must be a string!")
+        
+
         dna = dna.upper()
         logger.debug(f"Sequence converted to uppercase: '{dna}'")
 
         allowed_bases = {"A", "T", "C", "G"}
 
-        if not isinstance(dna, str):
-            raise TypeError ("The sequence must be a string!")
-        
         for x in dna:
             if x not in allowed_bases:
                 raise ValueError ("Invalid non-DNA bases appear in this sequence!")
+
 
         return dna.translate(str.maketrans("T", "U"))
     
