@@ -32,7 +32,7 @@ def test_blocking_non_integer_blocksize ():
         blocking(seq, 0)
 
 
-#Invalid non-DNA bases in the sequence
+#Invalid non-DNA bases in the sequence should raise a ValueError
 def test_block_non_DNA_bases_in_sequence ():
     seq = "aggagx"
     with pytest.raises(ValueError):
