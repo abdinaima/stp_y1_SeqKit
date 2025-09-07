@@ -15,6 +15,16 @@ def create_logger():
     logger = logging.getLogger('SeqKit_tools_logger')
     logger.setLevel(logging.DEBUG)  # Set the root logger level to DEBUG
 
+    # -------------------- NEW: Ensures logs directory exists --------------------
+    # GitHub Actions fails trying to write logs to a non-existent folder. 
+    # Codecov relies on successful test runs to collect coverage reports, and if the workflow fails due to a missing logs folder,
+    # Codecov cannot generate coverage reports. This ensures the folder exists
+    # before any logging occurs, preventing workflow errors while still allowing
+    # local logging.
+    logs_path = parent_directory / "logs"
+    logs_path.mkdir(exist_ok=True)
+    # ---------------------------------------------------------------------------
+
     # Stream handler with INFO level
     stream_handler = logging.StreamHandler()
     stream_handler.setLevel(logging.DEBUG)
