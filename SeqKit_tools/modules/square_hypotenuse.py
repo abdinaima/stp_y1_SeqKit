@@ -24,7 +24,7 @@ def square_hypotenuse (a, b):
         logger.error(f"Calculating the square of the hypotenuse failed: {e}")
         raise
 
-if __name__ == "__main__":
+if __name__ == "__main__": #pragma: no cover
     
     print(square_hypotenuse(10, 12))
 

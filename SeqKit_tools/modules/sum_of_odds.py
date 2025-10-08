@@ -53,7 +53,7 @@ def sum_of_odds (n1, n2):
         raise
         
 
-if __name__ == "__main__":
+if __name__ == "__main__": #pragma: no cover
     
     print(sum_of_odds(10, 25))
 
