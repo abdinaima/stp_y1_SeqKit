@@ -3,7 +3,7 @@ name: Run tests and upload coverage
 on:
   push:
     branches:
-      - mywork       # runs when you push to your personal branch
+      - personal_work       # runs when you push to your personal branch
       - develop      # runs when pushing to develop
   pull_request:
     branches:
