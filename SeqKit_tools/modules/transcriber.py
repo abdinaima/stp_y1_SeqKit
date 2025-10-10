@@ -16,17 +16,17 @@ def transcriber (dna):
             raise TypeError ("The sequence must be a string!")
         
 
-        dna = dna.upper()
-        logger.debug(f"Sequence converted to uppercase: '{dna}'")
+        dna = dna.lower()
+        logger.debug(f"Sequence converted to lowercase: '{dna}'")
 
-        allowed_bases = {"A", "T", "C", "G"}
+        allowed_bases = {"a", "t", "c", "g"}
 
         for x in dna:
             if x not in allowed_bases:
                 raise ValueError ("Invalid non-DNA bases appear in this sequence!")
 
 
-        return dna.translate(str.maketrans("T", "U"))
+        return dna.translate(str.maketrans("t", "u"))
     
     except (TypeError, ValueError) as e:
         logger.error(f"Transcriber failed: {e}")
@@ -36,7 +36,7 @@ def transcriber (dna):
 if __name__ == "__main__": #pragma: no cover
     
     dna = "GCTGAGACTTCCTGGACGGGGGACAGGCTGTGGGGTTTCTCAGATAACTGGGCCCCTGCGCTCAGGAGGCCTTCACCCTCTGCTCTGGGTAAAGTTCATTGGAACAGAAAGAAATGGATTTATCTGCTCTTCGCGTTGAAGAAGTACAAAATGTCATTAATGCTATGCAGAAAATCTTAGAGTGTCCCATCTGTCTGGAGTTGATCAAGGAACCTGTCTCCACAAAGTGTGACCACATATTTTGCAAATTTTGCATGCTGAAACTTCTCAACCAGAAGAAAGGGCCTTCACAGTGTCCTTTATGTAAGAATGATATAACCAAAAGGAGCCTACAAGAAAGTACGAGATTTGAT"
-
+    
     rna = transcriber(dna)
     
     print(rna)
