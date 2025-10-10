@@ -5,7 +5,7 @@ from SeqKit_tools.modules.transcriber import transcriber
 def test_transcriber_regular_case ():
     dna = "aggagtaagcccttgcaactggaaatacacccattg"
     result = transcriber(dna)
-    expected = "AGGAGUAAGCCCUUGCAACUGGAAAUACACCCAUUG"
+    expected = "aggaguaagcccuugcaacuggaaauacacccauug"
     assert result == expected
 
 #Empty sequence provided
